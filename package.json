@@ -1,0 +1,26 @@
+{
+  "name": "data-structure",
+  "version": "0.1.0",
+  "description": "一些javaScript常用数据结构",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuHong-HL/data-structure.git"
+  },
+  "keywords": [
+    "数据结构",
+    "javaScript数据结构",
+    "类",
+    "class",
+    "data-structure"
+  ],
+  "author": "hl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuHong-HL/data-structure/issues"
+  },
+  "homepage": "https://github.com/LuHong-HL/data-structure#readme"
+}

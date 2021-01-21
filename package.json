@@ -1,9 +1,10 @@
 {
-  "name": "data-structure",
-  "version": "0.1.0",
+  "name": "common-data-structure",
+  "version": "0.1.1",
   "description": "一些javaScript常用数据结构",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,16 +12,27 @@
     "url": "git+https://github.com/LuHong-HL/data-structure.git"
   },
   "keywords": [
+    "common-data-structure",
+    "data-structure",
+    "structure",
     "数据结构",
     "javaScript数据结构",
     "类",
-    "class",
-    "data-structure"
+    "class"
   ],
   "author": "hl",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LuHong-HL/data-structure/issues"
   },
-  "homepage": "https://github.com/LuHong-HL/data-structure#readme"
+  "homepage": "https://github.com/LuHong-HL/data-structure#readme",
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.12.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11"
+  }
 }

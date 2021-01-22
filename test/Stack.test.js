@@ -1,4 +1,5 @@
-import { Stack } from '../lib/index'
+// import { Stack } from '../lib/index'
+import { Stack } from '../src/index'
 
 describe('stack tests', () => {
   const stack = new Stack()
@@ -29,6 +30,12 @@ describe('stack tests', () => {
     })
   })
 
+  describe('.toString()', () => {
+    test('should have string of 1,2,3th', () => {
+      expect(stack.toString()).toEqual('1,2,3th')
+    })
+  })
+
   describe('.pop()', () => {
     test('should pop the elements', () => {
       expect(stack.pop()).toEqual('3th')
@@ -45,4 +52,5 @@ describe('stack tests', () => {
       expect(stack.isEmpty()).toEqual(true)
     })
   })
+
 })

@@ -1,5 +1,4 @@
-// import { Stack } from '../lib/index'
-import { Stack } from '../src/index'
+import { Stack } from '../lib/index'
 
 describe('stack tests', () => {
   const stack = new Stack()
@@ -45,7 +44,7 @@ describe('stack tests', () => {
 
   describe('.clear()', () => {
     test('should clear the stack', () => {
-      stack.clear();
+      stack.clear()
       expect(stack.pop()).toEqual(undefined)
       expect(stack.peek()).toEqual(undefined)
       expect(stack.size()).toEqual(0)

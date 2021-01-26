@@ -1,4 +1,4 @@
-# data-structure
+# common-data-structure
 
 ## Installing
 

@@ -9,7 +9,7 @@ npm install --save common-data-structure
 ## Example
 
 ``` javascript 
-import { Stack } from 'common-data-structure'
+const Stack = require('../lib/index').Stack
 
 const stack = new Stack() // create an instance
 stack.push(5) // add an element

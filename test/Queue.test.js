@@ -1,4 +1,4 @@
-import { Queue } from '../lib/index'
+const Queue = require('../lib/index').Queue
 
 describe('Queue unit tests', () => {
   let queue

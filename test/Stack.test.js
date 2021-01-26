@@ -1,4 +1,4 @@
-import { Stack } from '../lib/index'
+const Stack = require('../lib/index').Stack
 
 describe('stack tests', () => {
   const stack = new Stack()

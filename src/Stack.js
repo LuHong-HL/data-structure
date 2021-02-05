@@ -2,7 +2,7 @@
  * 栈
  */
 class Stack {
-  constructor () {
+  constructor() {
     this.count = 0
     this.items = {}
   }
@@ -10,7 +10,7 @@ class Stack {
    * 向栈添加元素
    * @param {*} element 元素
    */
-  push (element) {
+  push(element) {
     this.items[this.count] = element
     this.count++
   }
@@ -18,7 +18,7 @@ class Stack {
   /**
    * 从栈移除元素
    */
-  pop () {
+  pop() {
     if (this.isEmpty()) {
       return undefined
     }
@@ -31,7 +31,7 @@ class Stack {
   /**
    * 查看栈顶元素
    */
-  peek () {
+  peek() {
     if (this.isEmpty()) {
       return undefined
     }
@@ -41,21 +41,21 @@ class Stack {
   /**
    * 检查栈是否为空
    */
-  isEmpty () {
+  isEmpty() {
     return this.count === 0
   }
 
   /**
    * 返回栈里的元素个数
    */
-  size () {
+  size() {
     return this.count
   }
 
   /**
    * 移除栈里的所有元素
    */
-  clear () {
+  clear() {
     this.items = {}
     this.count = 0
   }
@@ -63,7 +63,7 @@ class Stack {
   /**
    * 返回对象的字符串表示形式
    */
-  toString () {
+  toString() {
     if (this.isEmpty()) {
       return ''
     }

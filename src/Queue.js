@@ -2,7 +2,7 @@
  * 栈
  */
 class Queue {
-  constructor () {
+  constructor() {
     this.count = 0
     this.lowestCount = 0
     this.items = {}
@@ -12,7 +12,7 @@ class Queue {
    * 向队列尾部添加一个（或多个）新的项
    * @param {*} element 元素
    */
-  enqueue (element) {
+  enqueue(element) {
     this.items[this.count] = element
     this.count++
   }
@@ -20,7 +20,7 @@ class Queue {
   /**
    * 移除队列的第一项（即排在队列最前面的项）并返回被移除的元素
    */
-  dequeue () {
+  dequeue() {
     if (this.isEmpty()) {
       return undefined
     }
@@ -33,7 +33,7 @@ class Queue {
   /**
    * 返回队列中第一个元素——最先被添加，也将是最先被移除的元素。
    */
-  peek () {
+  peek() {
     if (this.isEmpty()) {
       return undefined
     }
@@ -43,21 +43,21 @@ class Queue {
   /**
    * 如果队列中不包含任何元素，返回 true，否则返回 false
    */
-  isEmpty () {
+  isEmpty() {
     return this.count - this.lowestCount === 0
   }
 
   /**
    * 返回队列包含的元素个数，与数组的 length 属性类似
    */
-  size () {
+  size() {
     return this.count - this.lowestCount
   }
-  
+
   /**
    * 清空队列中所有的元素
    */
-  clear () {
+  clear() {
     this.count = 0
     this.lowestCount = 0
     this.items = {}
@@ -66,7 +66,7 @@ class Queue {
   /**
    * 返回字符串
    */
-  toString () {
+  toString() {
     if (this.isEmpty()) {
       return ''
     }

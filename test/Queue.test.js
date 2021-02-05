@@ -2,7 +2,6 @@ const Queue = require('../').Queue
 
 describe('Queue unit tests', () => {
   let queue
-
   describe('new Queue()', () => {
     test('creates an empty queue', () => {
       queue = new Queue()

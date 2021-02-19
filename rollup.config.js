@@ -1,6 +1,7 @@
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve' // 可以告诉 Rollup 如何查找外部模块
-import commonjs from '@rollup/plugin-commonjs' // convert CommonJS to ES2015 before Rollup can process them
+// convert CommonJS to ES2015 before Rollup can process them
+import commonjs from '@rollup/plugin-commonjs' // eslint-disable-line
 // import { terser } from 'rollup-plugin-terser' // 压缩
 // import replace from '@rollup/plugin-replace' // 替换属性或者值 process.env.NODE_ENV 环境变量的设置
 import { eslint } from 'rollup-plugin-eslint' // 代码格式检测

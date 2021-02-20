@@ -1,5 +1,5 @@
 /**
- * 栈
+ * 队列
  */
 class Queue {
   constructor() {

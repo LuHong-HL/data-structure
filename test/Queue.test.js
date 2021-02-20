@@ -1,4 +1,4 @@
-const Queue = require('../').Queue
+const Queue = require('../lib').Queue
 
 describe('Queue unit tests', () => {
   let queue

@@ -7,8 +7,8 @@
     "dev": "rollup --config --watch",
     "build": "rollup --config --environment NODE_ENV:production",
     "test": "jest",
-    "lint": "eslint src test",
-    "fix": "eslint --ext .js --fix src test"
+    "lint": "eslint src test util",
+    "fix": "eslint --ext .js --fix src test util"
   },
   "husky": {
     "hooks": {

@@ -2,16 +2,16 @@
 # This file is for unifying the coding style for different editors and IDEs
 # editorconfig.org
 
-root = true
+root = true # 必须在序言中指定。设置为true停止.editorconfig对当前文件的 文件搜索。该值不区分大小写。
 
 [*]
-charset = utf-8
-indent_style = space
-indent_size = 2
+charset = utf-8 # 字符集
+indent_style = space # 设置为tab或space
+indent_size = 2 # 缩进级别的列数
 end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
+insert_final_newline = true # 以换行符结尾
+trim_trailing_whitespace = true # 删除文件中换行符之前的所有空白字符
 
 [*.md]
 insert_final_newline = false
-trim_trailing_whitespace = false
+trim_trailing_whitespace = false # 不删除文件中换行符之前的所有空白字符

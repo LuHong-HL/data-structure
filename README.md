@@ -4,14 +4,14 @@ Help you more convenient to use some common JavaScript data structure
 
 ## Table of Contents
 
-- [Installing](# Installing) 
-- [Example](# Example) 
-- [Require](# Require) 
-- [API](# API) 
-  + [Queue](# Queue) 
-  + [Deque](# Deque) 
-  + [Stack](# Stack) 
-  + [LinkedList](# LinkedList) 
++ [Installing](#Installing) 
++ [Example](#Example) 
++ [Require](#Require) 
++ [API](#API) 
+  - [Queue](#Queue) 
+  - [Deque](#Deque) 
+  - [Stack](#Stack) 
+  - [LinkedList](#LinkedList) 
 
 ## Installing
 
@@ -47,7 +47,7 @@ const {
 
 ## API 
 
-- #### Queue 
++ #### Queue 
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ const {
 | clear() |  | 清空队列中所有的元素 |
 | toString() |  | 返回字符串 |
 
-- #### Deque 
++ #### Deque 
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ const {
 | clear() | | 清空队列中所有的元素 |
 | toString() | | 返回字符串 |
 
-- ####  Stack 
++ ####  Stack 
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ const {
 | size() |  | 移除栈里的所有元素 |
 | toString() |  | 返回对象的字符串表示形式 |
 
-- #### LinkedList 
++ #### LinkedList 
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
 {
   "name": "common-data-structure",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "一些javaScript常用数据结构",
   "main": "lib/index.js",
   "scripts": {

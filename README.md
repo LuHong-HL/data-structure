@@ -8,10 +8,10 @@ Help you more convenient to use some common JavaScript data structure
 - [Example](#Example) 
 - [Require](#Require) 
 - [API](#API) 
-  + [Queue](#Queue) 
-  + [Deque](#Deque) 
-  + [Stack](#Stack) 
-  + [LinkedList](#LinkedList) 
+  - [Queue](#Queue) 
+  - [Deque](#Deque) 
+  - [Stack](#Stack) 
+  - [LinkedList](#LinkedList) 
 
 ## Installing
 

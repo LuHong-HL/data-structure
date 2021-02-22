@@ -3,6 +3,7 @@
 Help you more convenient to use some common JavaScript data structure
 
 ## Table of Contents
+
 - [Installing](# Installing) 
 - [Example](# Example) 
 - [Require](# Require) 
@@ -47,6 +48,7 @@ const {
 ## API 
 
 - #### Queue 
+
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
 | enqueue(element) | element: 元素 | 向队列尾部添加一个（或多个）新的项 |
@@ -58,6 +60,7 @@ const {
 | toString() |  | 返回字符串 |
 
 - #### Deque 
+
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
 | addFront(element) | element: 元素 | 在双端队列前添加新的元素 |
@@ -72,6 +75,7 @@ const {
 | toString() | | 返回字符串 |
 
 - ####  Stack 
+
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
 | push(element) | element: 元素 | 向栈添加元素 |
@@ -82,6 +86,7 @@ const {
 | toString() |  | 返回对象的字符串表示形式 |
 
 - #### LinkedList 
+
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
 | push(element) | element: 元素 | 向链表尾部添加一个新元素 |

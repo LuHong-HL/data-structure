@@ -4,24 +4,24 @@ Help you more convenient to use some common JavaScript data structure
 
 ## Table of Contents
 
-- [Installing](#Installing) 
-- [Example](#Example) 
-- [Require](#Require) 
-- [API](#API) 
-  - [Queue](#Queue) 
-  - [Deque](#Deque) 
-  - [Stack](#Stack) 
-  - [LinkedList](#LinkedList) 
+- [Installing](#installing)
+- [Example](#example)
+- [Require](#require)
+- [API](#api)
+  + [Queue](#queue)
+  + [Deque](#deque)
+  + [Stack](#stack)
+  + [LinkedList](#linkedlist)
 
 ## Installing
 
-``` javascript 
+``` javascript
 npm install --save common-data-structure
 ```
 
 ## Example
 
-``` javascript 
+``` javascript
 const { Stack } = require('common-data-structure')
 
 const stack = new Stack() // create an instance
@@ -29,13 +29,13 @@ stack.push(5) // add an element
 stack.push(6)
 stack.peek() // peek top of stack element
 stack.push(8)
-stack.isEmpty() // Is the stack empty 
+stack.isEmpty() // Is the stack empty
 stack.size() // stack length
 ```
 
-## Require 
+## Require
 
-``` javascript 
+``` javascript
 // import your required classes
 const {
   Queue,
@@ -45,9 +45,9 @@ const {
 } = require('common-data-structure')
 ```
 
-## API 
+## API
 
-#### Queue 
+#### Queue
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ const {
 | clear() |  | 清空队列中所有的元素 |
 | toString() |  | 返回字符串 |
 
-#### Deque 
+#### Deque
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ const {
 | clear() | | 清空队列中所有的元素 |
 | toString() | | 返回字符串 |
 
-####  Stack 
+####  Stack
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ const {
 | size() |  | 移除栈里的所有元素 |
 | toString() |  | 返回对象的字符串表示形式 |
 
-#### LinkedList 
+#### LinkedList
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |

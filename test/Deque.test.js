@@ -1,4 +1,4 @@
-const Deque = require('../lib').Deque
+const { Deque } = require('../lib')
 
 describe('Deque unit tests', () => {
   const deque = new Deque()

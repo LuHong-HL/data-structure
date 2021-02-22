@@ -1,4 +1,4 @@
-const Stack = require('../lib').Stack
+const { Stack } = require('../lib')
 
 describe('stack tests', () => {
   const stack = new Stack()

@@ -13,7 +13,7 @@ class DoublyNode extends Node {
 /**
  * 双向链表类
  */
-export default class DoublyLinkedList extends LinkedList {
+class DoublyLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals) {
     super(equalsFn)
     this.tail = undefined // 记录双向链表最后一个节点
@@ -105,3 +105,5 @@ export default class DoublyLinkedList extends LinkedList {
     return undefined
   }
 }
+
+export default DoublyLinkedList

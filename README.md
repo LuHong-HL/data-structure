@@ -12,6 +12,7 @@ Help you more convenient to use some common JavaScript data structure
   + [Deque](#deque)
   + [Stack](#stack)
   + [LinkedList](#linkedlist)
+  + [DoublyLinkedList](#doublylinkedlist)
 
 ## Installing
 
@@ -41,7 +42,8 @@ const {
   Queue,
   Deque,
   Stack,
-  LinkedList
+  LinkedList,
+  DoublyLinkedList
 } = require('common-data-structure')
 ```
 
@@ -86,6 +88,21 @@ const {
 | toString() |  | 返回对象的字符串表示形式 |
 
 #### LinkedList
+
+| 方法名称 | 参数 | 描述 |
+| --- | --- | --- |
+| push(element) | element: 元素 | 向链表尾部添加一个新元素 |
+| insert(element) | element: 元素; index: 插入元素的位置 | 向链表的特定位置插入一个新元素 |
+| getElementAt(index) | index: 元素的位置 | 在双端队列前端移除第一个元素 |
+| removeBack(index) | index: 元素的位置 | 返回链表中特定位置的元素。如果链表中不存在这样的元素，则返回 undefined |
+| remove(element) | element: 元素 | 从链表中移除一个元素 |
+| indexOf(element) | element: 元素 | 返回元素在链表中的索引。如果链表中没有改元素则返回 -1 |
+| removeAt(index) | index: 元素的位置 | 从链表的特定位置移除一个元素 |
+| isEmpty() | | 判断链表是否为空 |
+| getHead() | | 获取链表的头节点 |
+| toString() | | 返回表示整个链表的字符串 |
+
+#### DoublyLinkedList
 
 | 方法名称 | 参数 | 描述 |
 | --- | --- | --- |

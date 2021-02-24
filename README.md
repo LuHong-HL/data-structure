@@ -13,6 +13,7 @@ Help you more convenient to use some common JavaScript data structure
   + [Stack](#stack)
   + [LinkedList](#linkedlist)
   + [DoublyLinkedList](#doublylinkedlist)
+  + [Set](#set)
 
 ## Installing
 
@@ -43,7 +44,8 @@ const {
   Deque,
   Stack,
   LinkedList,
-  DoublyLinkedList
+  DoublyLinkedList,
+  Set
 } = require('common-data-structure')
 ```
 
@@ -116,3 +118,14 @@ const {
 | isEmpty() | | 判断链表是否为空 |
 | getHead() | | 获取链表的头节点 |
 | toString() | | 返回表示整个链表的字符串 |
+
+#### Set
+
+| 方法名称 | 参数 | 描述 |
+| --- | --- | --- |
+| add(element) | element: 元素 | 向集合添加一个新元素 |
+| delete(element) | element: 元素 | 从集合中移除一个元素 |
+| has(element) | element: 元素 | 判断元素是否在集合中，存在则返回true,否则返回false |
+| clear() | | 移除集合中的所有元素 |
+| size() | | 返回集合所包含元素的数量 |
+| values() | | 返回一个包含集合中所有元素的数组 |

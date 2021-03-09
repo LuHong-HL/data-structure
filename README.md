@@ -14,6 +14,7 @@ Help you more convenient to use some common JavaScript data structure
   + [LinkedList](#linkedlist)
   + [DoublyLinkedList](#doublylinkedlist)
   + [Set](#set)
+  + [HashMap](#hashmap)
 
 ## Installing
 
@@ -45,7 +46,8 @@ const {
   Stack,
   LinkedList,
   DoublyLinkedList,
-  Set
+  Set,
+  HashMap
 } = require('common-data-structure')
 ```
 
@@ -129,3 +131,21 @@ const {
 | clear() | | 移除集合中的所有元素 |
 | size() | | 返回集合所包含元素的数量 |
 | values() | | 返回一个包含集合中所有元素的数组 |
+
+#### HashMap
+
+| 方法名称 | 参数 | 描述 |
+| --- | --- | --- |
+| set(key, value) | key: 键; value: 值 | 向散列表增加一个新的项 |
+| delete(key) | key: 键 | 根据键值移除值 |
+| get(key) | key: 键 | 根据键值返回特定的值 |
+| hasKey() | key: 键 | 判断某键值是否存在散列表中 |
+| clear() | | 删除字典中所有值 |
+| size() | | 返回字典包含的数量 |
+| isEmpty() | | 字典是否为空 |
+| keys() | | 将字典所包含的所有键名以数组形式返回 |
+| values() | | 将字典所包含的所有数值以数组形式返回 |
+| keyValues() | | 将字典中所有[{键，值}]对返回 |
+| forEach() | | 迭代字典中所有的键值对 |
+| toString() | | 返回 hashmap 的字符串 |
+

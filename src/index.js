@@ -4,6 +4,7 @@ import Deque from './Deque'
 import LinkedList from './LinkedList'
 import DoublyLinkedList from './DoublyLinkedList'
 import Set from './Set'
+import HashMap from './HashMap'
 
 export {
   Stack,
@@ -11,5 +12,6 @@ export {
   Deque,
   LinkedList,
   DoublyLinkedList,
-  Set
+  Set,
+  HashMap
 }

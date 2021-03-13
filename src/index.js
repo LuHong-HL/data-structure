@@ -5,6 +5,7 @@ import LinkedList from './LinkedList'
 import DoublyLinkedList from './DoublyLinkedList'
 import Set from './Set'
 import HashMap from './HashMap'
+import BinarySearchTree from './BinarySearchTree'
 
 export {
   Stack,
@@ -13,5 +14,6 @@ export {
   LinkedList,
   DoublyLinkedList,
   Set,
-  HashMap
+  HashMap,
+  BinarySearchTree
 }

@@ -15,6 +15,7 @@ Help you more convenient to use some common JavaScript data structure
   + [DoublyLinkedList](#doublylinkedlist)
   + [Set](#set)
   + [HashMap](#hashmap)
+  + [BinarySearchTree](#binarysearchtree)
 
 ## Installing
 
@@ -47,7 +48,8 @@ const {
   LinkedList,
   DoublyLinkedList,
   Set,
-  HashMap
+  HashMap,
+  BinarySearchTree
 } = require('common-data-structure')
 ```
 
@@ -149,3 +151,15 @@ const {
 | forEach() | | 迭代字典中所有的键值对 |
 | toString() | | 返回 hashmap 的字符串 |
 
+#### BinarySearchTree
+
+| 方法名称 | 参数 | 描述 |
+| --- | --- | --- |
+| insert(key) | key: 键 | 向树中插入一个新的键 |
+| search(key) | key: 键 | 在树中查找一个键 |
+| inOrderTraverse(callback) | callback: 回调函数 | 中序遍历所有节点 |
+| preOrderTraverse(callback) | callback: 回调函数 | 先序遍历所有节点 |
+| postOrderTraverse(callback) | callback: 回调函数 | 后序遍历所有节点 |
+| min() |  | 返回树中最小的值/键 |
+| max() | | 返回树中最大的值/键 |
+| remove(key) | key: 键 | 从树中移除某个键 |

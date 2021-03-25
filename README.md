@@ -16,6 +16,8 @@ Help you more convenient to use some common JavaScript data structure
   + [Set](#set)
   + [HashMap](#hashmap)
   + [BinarySearchTree](#binarysearchtree)
+  + [MinHead](#minhead)
+
 
 ## Installing
 
@@ -49,7 +51,8 @@ const {
   DoublyLinkedList,
   Set,
   HashMap,
-  BinarySearchTree
+  BinarySearchTree,
+  MinHead
 } = require('common-data-structure')
 ```
 
@@ -163,3 +166,14 @@ const {
 | min() |  | 返回树中最小的值/键 |
 | max() | | 返回树中最大的值/键 |
 | remove(key) | key: 键 | 从树中移除某个键 |
+
+#### MinHead
+
+| 方法名称 | 参数 | 描述 |
+| --- | --- | --- |
+| insert(value) | value: 值 | 向堆中插入一个新的值 |
+| extract() |  | 移除最小值 |
+| size() |  | 堆的大小 |
+| isEmpty() |  | 是否为空 |
+| clear() |  | 清除数据 |
+| findMinimum() |  | 查找最小的值 |

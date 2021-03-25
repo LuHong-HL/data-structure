@@ -1,4 +1,4 @@
-import { defaultCompare } from '../util'
+import { defaultCompare, Compare } from '../util'
 // import { Node } from './models/node'
 
 /**
@@ -18,7 +18,7 @@ class MinHead {
    * @param {Number} index 下标
    * @returns {Number} 左侧子节点位置
    */
-  getLeftIndex(index) {
+  _getLeftIndex(index) {
     return 2 * index + 1
   }
 
@@ -27,7 +27,7 @@ class MinHead {
    * @param {Number} index 下标
    * @returns {Number} 右侧子节点位置
    */
-  getRightIndex(index) {
+  _getRightIndex(index) {
     return 2 * index + 2
   }
 
@@ -36,7 +36,7 @@ class MinHead {
    * @param {Number} index 下标
    * @returns {Number | undefined} 父节点节点位置
    */
-  getParentIndex(index) {
+  _getParentIndex(index) {
     if (index === 0) {
       return undefined
     }
@@ -50,219 +50,106 @@ class MinHead {
   insert(value) {
     if (value != null) {
       this.heap.push(value) // 插入堆的最后
-      this.siftUp(this.heap.length - 1) // 上移操作，直到直到比他小的父节点
+      this._siftUp(this.heap.length - 1) // 上移操作，直到直到比他小的父节点
       return true
     }
     return false
   }
 
   /**
-   * 移除最小值
+   * 上移操作
+   * @param {Number} index 下标
    */
-  extract() {
-
+  _siftUp(index) {
+    let parent = this._getParentIndex(index)
+    while (index > 0 && this.compareFn(this.heap[parent], this.heap[index]) === Compare.BIGGER_THAN) {
+      this._swap(this.heap, parent, index)
+      index = parent
+      parent = this._getParentIndex(index)
+    }
   }
 
   /**
-   * 返回最小值
+   * 交换数组的值
+   * @param {Array} array 数组
+   * @param {Number} a 下标a
+   * @param {Number} b 下标b
    */
-  findMinimum() {
-
+  _swap(array, a, b) {
+    const temp = array[a]
+    array[a] = array[b]
+    array[b] = temp
   }
 
-  // /**
-  //  * 插入节点
-  //  * @param {*} node 要插入键的节点
-  //  * @param {*} key 键
-  //  */
-  // insertNode(node, key) {
-  //   if (this.compareFn(key, node.key) === Compare.LESS_THAN) { // 小于父节点
-  //     if (node.left == null) { // 父节点不存在左节点时
-  //       node.left = new Node(key)
-  //     } else {
-  //       this.insertNode(node.left, key)
-  //     }
-  //   } else { // 大于或者等于父节点
-  //     if (node.right == null) { // 父节点不存在右节点时
-  //       node.right = new Node(key)
-  //     } else {
-  //       this.insertNode(node.right, key)
-  //     }
-  //   }
-  // }
+  /**
+   * 移除最小值
+   * @returns {Number | undefined} 返回当前移除的值
+   */
+  extract() {
+    if (this.isEmpty()) {
+      return undefined
+    }
+    if (this.size() === 1) {
+      return this.heap.shift()
+    }
+    const removedValue = this.heap[0]
+    this.heap[0] = this.heap[this.size() -1]
+    this.heap.pop()
+    this._shiftDown(0)
+    return removedValue
+  }
 
-  // /**
-  //  * 在树中查找一个键
-  //  * @param {*} key 键
-  //  * @return { boolean }
-  //  */
-  // search(key) {
-  //   return this.searchNode(this.root, key)
-  // }
+  /**
+   * 下移操作
+   * @param {Number} index 下标
+   */
+  _shiftDown(index) {
+    let element = index
+    const left = this._getLeftIndex(index)
+    const right = this._getRightIndex(index)
+    const size = this.size()
+    if (left < size && this.compareFn(this.heap[element], this.heap[left]) === Compare.BIGGER_THAN) {
+      element = left
+    }
+    if (right < size && this.compareFn(this.heap[element], this.heap[right]) === Compare.BIGGER_THAN) {
+      element = right
+    }
+    if (index !== element) {
+      this._swap(this.heap, index, element)
+      this._shiftDown(element)
+    }
+  }
 
-  // /**
-  //  * 根据 key 搜索一个节点
-  //  * @param {*} node 节点
-  //  * @param {*} key node的键值
-  //  */
-  // searchNode(node, key) {
-  //   if (node == null) {
-  //     return false
-  //   }
-  //   if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
-  //     return this.searchNode(node.left, key)
-  //   } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
-  //     return this.searchNode(node.right, key)
-  //   }
-  //   return true
+  /**
+   * 堆的大小
+   * @returns {Number}
+   */
+  size() {
+    return this.heap.length
+  }
 
-  // }
+  /**
+   * 是否为空
+   * @returns {Boolre}
+   */
+  isEmpty() {
+    return this.size() === 0
+  }
 
-  // /**
-  //  * 中序遍历所有节点
-  //  * @param {Function} callback 回调函数
-  //  */
-  // inOrderTraverse(callback) {
-  //   this.inOrderTraverseNode(this.root, callback)
-  // }
+  /**
+   * 清除数据
+   */
+  clear() {
+    this.heap = []
+  }
 
-  // /**
-  //  * 中序遍历节点函数
-  //  * @param {*} node 节点
-  //  * @param {Function} callback 回调函数
-  //  */
-  // inOrderTraverseNode(node, callback) {
-  //   if (node != null) {
-  //     this.inOrderTraverseNode(node.left, callback)
-  //     callback(node.key)
-  //     this.inOrderTraverseNode(node.right, callback)
-  //   }
-  // }
-
-  // /**
-  //  * 先序遍历所有节点
-  //  * @param {Function} callback 回调函数
-  //  */
-  // preOrderTraverse(callback) {
-  //   this.preOrderTraverseNode(this.root, callback)
-  // }
-
-  // /**
-  //  * 先序遍历节点
-  //  * @param {*} node 节点
-  //  * @param {*} callback 回调函数
-  //  */
-  // preOrderTraverseNode(node, callback) {
-  //   if (node != null) {
-  //     callback(node.key)
-  //     this.preOrderTraverseNode(node.left, callback)
-  //     this.preOrderTraverseNode(node.right, callback)
-  //   }
-  // }
-
-  // /**
-  //  * 后序遍历所有节点
-  //  * @param {Function} callback 回调函数
-  //  */
-  // postOrderTraverse(callback) {
-  //   this.postOrderTraverseNode(this.root, callback)
-  // }
-
-  // /**
-  //  * 后序遍历节点
-  //  * @param {*} node 节点
-  //  * @param {*} callback 回调函数
-  //  */
-  // postOrderTraverseNode(node, callback) {
-  //   if (node != null) {
-  //     this.postOrderTraverseNode(node.left, callback)
-  //     this.postOrderTraverseNode(node.right, callback)
-  //     callback(node.key)
-  //   }
-  // }
-
-  // /**
-  //  * 返回树中最小的值/键
-  //  */
-  // min() {
-  //   return this.minNode(this.root)
-  // }
-
-  // /**
-  //  * 获取最小节点
-  //  * @param {*} node 节点
-  //  */
-  // minNode(node) {
-  //   let current = node
-  //   while (current != null && current.left != null) {
-  //     current = current.left
-  //   }
-  //   return current
-  // }
-
-  // /**
-  //  * 返回树中最大的值/键
-  //  */
-  // max() {
-  //   return this.maxNode(this.root)
-  // }
-
-  // /**
-  //  * 获取最大节点
-  //  * @param {*} node 节点
-  //  */
-  // maxNode(node) {
-  //   let current = node
-  //   while (current != null && current.right != null) {
-  //     current = current.right
-  //   }
-  //   return current
-  // }
-
-  // /**
-  //  * 从树中移除某个键
-  //  * @param {*} key 键
-  //  */
-  // remove(key) {
-  //   this.root = this.removeNode(this.root, key)
-  // }
-
-  // /**
-  //  * 根据 key 删除node节点
-  //  * @param {*} node node节点
-  //  * @param {*} key 键
-  //  */
-  // removeNode(node, key) {
-  //   if (node == null) { // 树为空
-  //     return null
-  //   }
-  //   if (this.compareFn(key, node.key) === Compare.LESS_THAN) { // key 小于 node.key
-  //     node.left = this.removeNode(node.left, key)
-  //     return node
-  //   } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) { // key 大于 node.key
-  //     node.right = this.removeNode(node.right, key)
-  //     return node
-  //   }
-  //   // key 相等
-  //   // 左右子节点为空
-  //   if (node.left == null && node.right == null) {
-  //     node = null
-  //     return node
-  //   }
-  //   // 其中一个子节点为空
-  //   if (node.left == null) {
-  //     node = node.right
-  //     return node
-  //   } else if (node.right == null) {
-  //     node = node.left
-  //     return node
-  //   }
-  //   // 左右子节点都不为空
-  //   const min = this.minNode(node.right)
-  //   node.key = min.key
-  //   node.right = this.removeNode(node.right, min.key)
-  //   return node
-  // }
+  /**
+   * 查找最小的值
+   * @returns {Number}
+   */
+  findMinimum() {
+    return this.isEmpty() ? undefined : this.heap[0]
+  }
 
 }
 

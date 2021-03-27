@@ -17,6 +17,7 @@ Help you more convenient to use some common JavaScript data structure
   + [HashMap](#hashmap)
   + [BinarySearchTree](#binarysearchtree)
   + [MinHead](#minhead)
+  + [MaxHead](#maxhead)
 
 
 ## Installing
@@ -52,7 +53,8 @@ const {
   Set,
   HashMap,
   BinarySearchTree,
-  MinHead
+  MinHead,
+  MaxHead
 } = require('common-data-structure')
 ```
 
@@ -177,3 +179,14 @@ const {
 | isEmpty() |  | 是否为空 |
 | clear() |  | 清除数据 |
 | findMinimum() |  | 查找最小的值 |
+
+#### MaxHead
+
+| 方法名称 | 参数 | 描述 |
+| --- | --- | --- |
+| insert(value) | value: 值 | 向堆中插入一个新的值 |
+| extract() |  | 移除最大值 |
+| size() |  | 堆的大小 |
+| isEmpty() |  | 是否为空 |
+| clear() |  | 清除数据 |
+| findMaxmum() |  | 查找最大的值 |

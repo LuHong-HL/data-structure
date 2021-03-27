@@ -7,6 +7,7 @@ import Set from './Set'
 import HashMap from './HashMap'
 import BinarySearchTree from './BinarySearchTree'
 import MinHeap from './MinHeap'
+import MaxHeap from './MaxHeap'
 
 export {
   Stack,
@@ -17,5 +18,6 @@ export {
   Set,
   HashMap,
   BinarySearchTree,
-  MinHeap
+  MinHeap,
+  MaxHeap
 }
